@@ -1,5 +1,5 @@
 {
   "hooks": {
-    "pre-commit": "lint-staged && pnpm run test && pnpm run docs-html && git add docs"
+    "pre-commit": "lint-staged && pnpm run test"
   }
 }
