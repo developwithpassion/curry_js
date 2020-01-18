@@ -29,7 +29,7 @@
   "scripts": {
     "bump-patch": "pnpm version patch",
     "build": "parcel build ./lib/index.js",
-    "docs-build": "documentation build lib/index.js -f md -o docs",
+    "docs-build": "documentation build lib/index.js -f md -o docs.md",
     "pretty": "prettier --config-precedence prefer-file --write \"lib/**/*.js\"",
     "lint": "eslint lib/**/*.js",
     "test": "mocha --require @babel/register ./lib/**/*.spec.js"
