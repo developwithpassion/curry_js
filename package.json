@@ -12,21 +12,24 @@
     "node": "*"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/register": "^7.7.0",
+    "@babel/core": "^7.8.3",
+    "@babel/register": "^7.8.3",
     "chai": "^4.2.0",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.5.0",
+    "documentation": "^12.1.4",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
     "eslint-config-strongloop": "^2.1.0",
-    "eslint-plugin-mocha": "^6.2.1",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.3",
+    "eslint-plugin-mocha": "^6.2.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "mocha": "^6.2.2",
     "parcel": "^1.12.4",
     "prettier": "^1.19.1"
   },
   "scripts": {
+    "bump-patch": "pnpm version patch",
     "build": "parcel build ./lib/index.js",
+    "docs-readme": "documentation readme lib/index.js --section=API",
     "pretty": "prettier --config-precedence prefer-file --write \"lib/**/*.js\"",
     "precommit": "lint-staged && yarn test",
     "lint": "eslint lib/**/*.js",
@@ -34,9 +37,10 @@
   },
   "lint-staged": {
     "lib/**/*.js": [
-      "yarn pretty",
-      "yarn lint",
-      "yarn build",
+      "pnpm run pretty",
+      "pnpm run lint",
+      "pnpm run build",
+      "pnpm run docs-readme",
       "git add"
     ]
   }
