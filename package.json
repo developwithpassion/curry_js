@@ -29,7 +29,7 @@
   "scripts": {
     "bump-patch": "pnpm version patch",
     "build": "parcel build ./lib/index.js",
-    "docs-readme": "documentation readme lib/index.js --section=API",
+    "docs-html": "documentation build lib/index.js -f html -o docs",
     "pretty": "prettier --config-precedence prefer-file --write \"lib/**/*.js\"",
     "precommit": "lint-staged && yarn test",
     "lint": "eslint lib/**/*.js",
@@ -40,7 +40,7 @@
       "pnpm run pretty",
       "pnpm run lint",
       "pnpm run build",
-      "pnpm run docs-readme",
+      "pnpm run docs-html",
       "git add"
     ]
   }
