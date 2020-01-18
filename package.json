@@ -31,7 +31,7 @@
     "build": "parcel build ./lib/index.js",
     "docs-html": "documentation build lib/index.js -f html -o docs",
     "pretty": "prettier --config-precedence prefer-file --write \"lib/**/*.js\"",
-    "precommit": "lint-staged && yarn test",
+    "precommit": "lint-staged && yarn test && pnpm run docs-html && git add docs",
     "lint": "eslint lib/**/*.js",
     "test": "mocha --require @babel/register ./lib/**/*.spec.js"
   },
